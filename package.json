@@ -1,0 +1,22 @@
+{
+  "name": "bigdata",
+  "version": "1.0.0",
+  "description": "big data project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YinonMaor/BigData.git"
+  },
+  "author": "Yinon and Maor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YinonMaor/BigData/issues"
+  },
+  "homepage": "https://github.com/YinonMaor/BigData#readme",
+  "dependencies": {
+    "decision-tree": "^0.3.1"
+  }
+}
