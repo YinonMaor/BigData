@@ -1,15 +1,15 @@
-const csv = require("csvtojson");
+const csv = require('csvtojson');
 
 module.exports = {
-    readCsvFile(csvFilePath) {
-        return new Promise(resolve => {
-            csv()
-            .fromFile(csvFilePath)
-            .then(function(jsonArrayObj){
-                resolve(jsonArrayObj)
-            })
-        })
-    }
+	readCsvFile(csvFilePath) {
+		return new Promise(resolve => {
+			csv().
+				fromFile(csvFilePath).
+				then(jsonArrayObj => {
+					resolve(jsonArrayObj);
+				});
+		});
+	}
 };
 
 
