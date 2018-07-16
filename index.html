@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Football Machine Learning</title>
+
+  <link rel="stylesheet" href="./styles.css">
+
+  <script>delete module.exports</script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+</head>
+
+<body>
+  <div id="container" class="container-fluid">
+    
+    <div class="header">
+      <h2 class="hash-heading">Football Machine Learning</h2>
+    </div>
+    <h3 class="hash-heading" id="opheader">Features:</h3>
+    <div class="network-contents">
+      <div class="header-contents">
+        <h3 class="hash-heading">Overall:</h3>
+        <textarea rows="2" cols="1" id="overall" class="text" maxlength="7"></textarea>
+      </div>
+      <div class="header-contents2">
+        <h3 class="hash-heading">Age:</h3>
+        <textarea rows="2" cols="1" id="age" class="text" maxlength="2"></textarea>
+      </div>
+      <div class="header-contents2">
+        <h3 class="hash-heading">Nationality:</h3>
+        <textarea rows="2" cols="1" id="nationality" class="text" maxlength="17"></textarea>
+      </div>
+      <div class="header-contents">
+        <h3 class="hash-heading">Prediction:</h3>
+        <textarea rows="2" cols="1" id="prediction" class="text" maxlength="0"></textarea>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <input id="clickButton" class="startButton" type="submit" value="Start Prediction" />
+    </div>
+
+    <div class="buttons">
+        <input id="closeButton" class="startButton" type="submit" value="Exit" />
+    </div>
+
+    <div class="footer">
+      <h4 class="hash-heading">Yinon Cohen, Maor Shabtay</h4>
+    </div>
+
+  </div>
+
+</body>
+<script src="./renderer.js" charset="utf-8"></script>
+
+</html>
