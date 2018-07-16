@@ -20,6 +20,6 @@
   "dependencies": {
     "csvtojson": "^2.0.6",
     "decision-tree": "^0.3.1",
-    "fast-csv": "^2.4.1"
+    "lodash": "^4.17.10"
   }
 }
