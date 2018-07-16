@@ -15,3 +15,7 @@ const closeApp = document.getElementById('closeButton');
 closeApp.addEventListener('click', () => {
     ipcRenderer.send('close-me')
 });
+
+ipcRenderer.on('prediction', (event, prediction) => {  
+    document.getElementById('prediction').innerHTML = prediction
+});

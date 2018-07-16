@@ -78,7 +78,7 @@ ipcMain.on('startPredict', (evt, arg) => {
 
 async function getData(nationality, age, overall) {
   let training_data = await reader.readCsvFile(path.join(__dirname, FILE_NAME))
-  _.each(training_data, (value, key) => {
+  _.each(training_data, value => {
       _.each(value, (v, k) => {
           if (isNumeric(v)) {
               value[k] = + v
@@ -98,7 +98,7 @@ async function getData(nationality, age, overall) {
       Age: age,
       Overall: overall
   });
-  console.log(predicted_class + K + ' ' + EURO)
+  mainWindow.webContents.send('prediction', predicted_class + K + ' ' + EURO);
 }
 
 
