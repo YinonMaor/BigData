@@ -4,7 +4,7 @@
   "description": "big data project",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run lint",
     "start": "electron .",
     "lint": "./node_modules/.bin/eslint .",
     "fix": "./node_modules/.bin/eslint . --fix"
