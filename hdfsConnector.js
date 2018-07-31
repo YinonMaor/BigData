@@ -1,13 +1,10 @@
-//const {MongoClient, ObjectID} = require('mongodb');
 const path = require('path');
 const fs = require('fs');
 const hdfs = require('./client');
 
-//const mongoURL = '';
-
 const localDataFile = fs.createReadStream(path.join(__dirname, 'PlayerPersonalDataM.csv'));
 
-const remoteDataFile = hdfs.createWriteStream('somePath');
+const remoteDataFile = hdfs.createWriteStream('try/PlayerPersonalDataM.csv');
 
 localDataFile.pipe(remoteDataFile);
 

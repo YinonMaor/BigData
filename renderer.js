@@ -16,6 +16,7 @@ showButton.addEventListener('click', () => {
 
 const downloadHDFS = document.getElementById('downloadHDFS');
 downloadHDFS.addEventListener('click', () => {
+    document.getElementById('downloadHDFS').disabled = true;
     ipcRenderer.send('downloadHDFS');
 });
 

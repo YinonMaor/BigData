@@ -67,6 +67,7 @@ ipcMain.on('viewData', () => {
 });
 
 ipcMain.on('downloadHDFS', () => {
+    fork(path.join(__dirname, './hdfsConnector'));
     console.log('Downloading to HDFS');
 });
 
