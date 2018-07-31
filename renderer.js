@@ -14,6 +14,11 @@ showButton.addEventListener('click', () => {
     ipcRenderer.send('viewData');
 });
 
+const downloadHDFS = document.getElementById('downloadHDFS');
+downloadHDFS.addEventListener('click', () => {
+    ipcRenderer.send('downloadHDFS');
+});
+
 const closeApp = document.getElementById('closeButton');
 closeApp.addEventListener('click', () => {
 	ipcRenderer.send('close-me');

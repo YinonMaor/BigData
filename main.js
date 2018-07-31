@@ -16,7 +16,7 @@ const K = 'K';
 let mainWindow;
 
 function createWindow () {
-  mainWindow = new BrowserWindow({width: 460, height: 500});
+  mainWindow = new BrowserWindow({width: 460, height: 540});
   mainWindow.loadFile('index.html');
   mainWindow.on('closed', () => {
     mainWindow = null;
@@ -66,6 +66,9 @@ ipcMain.on('viewData', () => {
     execSync(`open -a "Google Chrome" http://${ip}:${PORT}`);
 });
 
+ipcMain.on('downloadHDFS', () => {
+    console.log('Downloading to HDFS');
+});
 
 async function getData(nationality, age, overall) {
   const training_data = await reader.readCsvFile(path.join(__dirname, FILE_NAME));

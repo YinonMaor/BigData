@@ -46,7 +46,7 @@ html, body, .container-fluid {
     margin-right: 10px;
   }
 
-  #clickButton, #closeButton, #showButton {
+  #clickButton, #closeButton, #showButton, #downloadHDFS {
     background-color: #555555;
     border: none;
     color: white;
