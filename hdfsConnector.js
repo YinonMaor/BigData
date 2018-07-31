@@ -9,6 +9,7 @@ const remoteDataFile = hdfs.createWriteStream('try/PlayerPersonalDataM.csv');
 localDataFile.pipe(remoteDataFile);
 
 remoteDataFile.on('error', err => {
+    console.log(err);
     throw err;
 });
 
