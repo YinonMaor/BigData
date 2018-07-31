@@ -1,3 +1,4 @@
+/* eslint-disable */
 if (document.getElementsByClassName('loader')[0].style.display === 'none') {
     document.getElementsByClassName('loader')[0].style.display = 'block';
 }

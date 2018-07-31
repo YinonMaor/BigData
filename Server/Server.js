@@ -134,7 +134,7 @@ require('dns').lookup(require('os').hostname(), (err, add) => {
     }
     const promise = getDataWithFilter();
     address = add;
-    process.stdout.write(`Loading data ...`);
+    process.stdout.write('Loading data ...');
     promise.then(() => {
         server.listen(PORT, address);
         process.stdout.write(`Server is listening on ip ${address}, port ${PORT}.\n`);
