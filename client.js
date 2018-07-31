@@ -1,6 +1,6 @@
 const WebHDFS = require('webhdfs');
 module.exports = WebHDFS.createClient({
-  user: 'hadoop-docker',
+  user: 'root',
   host: 'http://localhost',
   path: '/',
   port: 50070
