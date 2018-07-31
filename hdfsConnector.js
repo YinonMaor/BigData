@@ -1,6 +1,8 @@
 const path = require('path');
 const fs = require('fs');
-const hdfs = require('./client');
+//const hdfs = require('./client');
+const WebHDFS = require('webhdfs');
+const hdfs = WebHDFS.createClient();
 
 const localDataFile = fs.createReadStream(path.join(__dirname, 'PlayerPersonalDataM.csv'));
 
