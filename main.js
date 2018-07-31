@@ -16,7 +16,7 @@ const K = 'K';
 let mainWindow;
 
 function createWindow () {
-  mainWindow = new BrowserWindow({width: 520, height: 520});
+  mainWindow = new BrowserWindow({width: 460, height: 500});
   mainWindow.loadFile('index.html');
   mainWindow.on('closed', () => {
     mainWindow = null;
@@ -82,12 +82,13 @@ async function getData(nationality, age, overall) {
           }
       });
   });
-  const features = ['Age', 'Overall'];
+  const features = ['Age', 'Overall', 'Nationality'];
   const class_name = 'Value';
   const dt = new DecisionTree(training_data, class_name, features);
   const predicted_class = dt.predict({
       Age: age,
-      Overall: overall
+      Overall: overall,
+      Nationality: nationality
   });
   mainWindow.webContents.send('prediction', predicted_class + K + ' ' + EURO);
 }
