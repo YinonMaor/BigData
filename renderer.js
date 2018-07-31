@@ -11,7 +11,17 @@ startPredict.addEventListener('click', () => {
 
 const showButton = document.getElementById('showButton');
 showButton.addEventListener('click', () => {
-    ipcRenderer.send('viewData');
+    const radios = document.getElementsByName('os');
+    let val = null;
+    for (let i = 0, length = radios.length; i < length; i++)
+    {
+        if (radios[i].checked)
+        {
+            val = radios[i].value;
+            break;
+        }
+    }
+    ipcRenderer.send('viewData', {val});
 });
 
 const downloadHDFS = document.getElementById('downloadHDFS');

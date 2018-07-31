@@ -62,8 +62,15 @@ ipcMain.on('startPredict', (evt, arg) => {
   getData(nationality, age, overall);
 });
 
-ipcMain.on('viewData', () => {
-    execSync(`open -a "Google Chrome" http://${ip}:${PORT}`);
+ipcMain.on('viewData', (evt, arg) => {
+    const {val} = arg;
+    const os = {
+        windows: `start chrome http://${ip}:${PORT}`,
+        mac: `open -a "Google Chrome" http://${ip}:${PORT}`,
+        linux: `google-chrome http://${ip}:${PORT}`
+    }
+    console.log(os[val]);
+    execSync(os[val]);
 });
 
 ipcMain.on('downloadHDFS', () => {
