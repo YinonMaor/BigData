@@ -4,7 +4,7 @@ const hdfs = require('./client');
 
 const localDataFile = fs.createReadStream(path.join(__dirname, 'PlayerPersonalDataM.csv'));
 
-const remoteDataFile = hdfs.createWriteStream('try/PlayerPersonalDataM.csv');
+const remoteDataFile = hdfs.createWriteStream('user/root/output/PlayerPersonalDataM.csv');
 
 localDataFile.pipe(remoteDataFile);
 
