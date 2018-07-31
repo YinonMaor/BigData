@@ -6,6 +6,7 @@ const DecisionTree = require('decision-tree');
 const reader = require('./reader');
 const FILE_NAME = 'PlayerPersonalDataM.csv';
 const _ = require('lodash');
+const { fork, execSync } = require('child_process');
 
 const EURO = '€';
 const MIL = 'M';
@@ -17,7 +18,7 @@ let mainWindow;
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 400, height: 390});
+  mainWindow = new BrowserWindow({width: 600, height: 600});
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html');
@@ -55,6 +56,17 @@ app.on('activate', () => {
     createWindow();
   }
 });
+//
+// let ip = '127.0.0.1';
+//
+// require('dns').lookup(require('os').hostname(), (err, add) => {
+//     if (err) {
+//         throw err;
+//     }
+//     ip = add;
+// });
+
+fork(path.join(__dirname, 'Server/Server'), ['--port', '3400'])
 
 function isNumeric(num){
   return !isNaN(num);
@@ -64,12 +76,17 @@ function isNumeric(num){
 // code. You can also put them in separate files and require them here.
 const {ipcMain} = require('electron');
 ipcMain.on('close-me', (/* evt, arg */) => {
+  execSync('killall node');
   app.quit();
 });
 
 ipcMain.on('startPredict', (evt, arg) => {
   const {nationality, age, overall} = arg;
   getData(nationality, age, overall);
+});
+
+ipcMain.on('viewData', () => {
+    execSync(`open -a "Google Chrome" http://${ip}:3400`);
 });
 
 

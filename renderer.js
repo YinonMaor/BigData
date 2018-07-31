@@ -9,11 +9,16 @@ startPredict.addEventListener('click', () => {
 	ipcRenderer.send('startPredict', {nationality, age, overall});
 });
 
+const showButton = document.getElementById('showButton');
+showButton.addEventListener('click', () => {
+    ipcRenderer.send('viewData');
+});
+
 const closeApp = document.getElementById('closeButton');
 closeApp.addEventListener('click', () => {
 	ipcRenderer.send('close-me');
 });
 
-ipcRenderer.on('prediction', (event, prediction) => {  
+ipcRenderer.on('prediction', (event, prediction) => {
 	document.getElementById('prediction').innerHTML = prediction;
 });

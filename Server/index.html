@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BigData - Yinon Maor</title>
+    <style>
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 5px solid #3498db;
+            width: 90px;
+            height: 90px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+            display: none;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        body {
+            background-color: #f2f2f2;
+        }
+
+        .filter {
+            margin-bottom: 30px;
+        }
+        #tableFilter {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 300px;
+        }
+
+        #tableFilter td, #tableFilter th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #tableFilter tr:nth-child(even){background-color: #f2f2f2;}
+
+        #tableFilter tr:hover {background-color: #ddd;}
+
+        #tableFilter th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #submitHomePage {
+            width: 100px;
+        }
+
+        input[type=submit]:active {
+            opacity: 0.7;
+        }
+
+        .app {
+            width: 100%;
+        }
+        .app table {
+            width: 100%;
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+        }
+
+        .app table th {
+            background-color: #e6e6e6;
+        }
+
+        .app table th, .app table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .app th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #cccccc;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<div style="width: 100%;">
+    <p style="text-align: center;">
+        <span style="font-size: 24px;">Football Database</span>
+    </p>
+    <p style="text-align: right">
+        <input id="submitHomePage" type="submit" value="HomePage" onclick="window.location.href='/'" />
+    </p>
+</div>
+<div class="filter">
+    <p>
+        <span style="font-size: 20px;">Filter By:</span>
+    </p>
+    <form id="form">
+        <table id="tableFilter">
+            <tr>
+                <th>Tag</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>
+                    Age:
+                </td>
+                <td>
+                    <input type="text" id="age" name="age" placeholder="Age.." onkeypress="return isNumberKey(event)" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nationality:
+                </td>
+                <td>
+                    <input type="text" id="nationality" name="nationality" placeholder="Nationality.." />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input id="submit" type="submit" value="Submit" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div class="loader"></div>
+<div id="appDiv" class="app"></div>
+<script src="app.js"></script>
+</body>
+</html>
