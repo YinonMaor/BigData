@@ -6,7 +6,7 @@ const hdfs = WebHDFS.createClient();
 
 const localDataFile = fs.createReadStream(path.join(__dirname, 'PlayerPersonalDataM.csv'));
 
-const remoteDataFile = hdfs.createWriteStream('user/root/input/PlayerPersonalDataM.csv');
+const remoteDataFile = hdfs.createWriteStream('/user/root/input/PlayerPersonalDataM.csv');
 
 localDataFile.pipe(remoteDataFile);
 
