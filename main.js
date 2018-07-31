@@ -16,7 +16,7 @@ const K = 'K';
 let mainWindow;
 
 function createWindow () {
-  mainWindow = new BrowserWindow({width: 460, height: 580});
+  mainWindow = new BrowserWindow({width: 460, height: 595});
   mainWindow.loadFile('index.html');
   mainWindow.on('closed', () => {
     mainWindow = null;
