@@ -13,10 +13,8 @@ const showButton = document.getElementById('showButton');
 showButton.addEventListener('click', () => {
     const radios = document.getElementsByName('os');
     let val = null;
-    for (let i = 0, length = radios.length; i < length; i++)
-    {
-        if (radios[i].checked)
-        {
+    for (let i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
             val = radios[i].value;
             break;
         }

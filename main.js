@@ -68,7 +68,7 @@ ipcMain.on('viewData', (evt, arg) => {
         windows: `start chrome http://${ip}:${PORT}`,
         mac: `open -a "Google Chrome" http://${ip}:${PORT}`,
         linux: `google-chrome http://${ip}:${PORT}`
-    }
+    };
     console.log(os[val]);
     execSync(os[val]);
 });

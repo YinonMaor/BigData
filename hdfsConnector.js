@@ -1,3 +1,29 @@
+const request = require('request');
+const path = require('path');
+const fs = require('fs');
+
+const filename = process.argv[2];
+
+const target = 'http://localhost:3000/upload/' + path.basename(filename);
+
+const rs = fs.createReadStream(filename);
+const ws = request.post(target);
+
+ws.on('drain', () => {
+    console.log('drain', new Date());
+    rs.resume();
+});
+
+rs.on('end', () => {
+    console.log('uploaded to ' + target);
+});
+
+ws.on('error', err => {
+    console.error('cannot send file to ' + target + ': ' + err);
+});
+
+rs.pipe(ws);
+/*
 const path = require('path');
 const fs = require('fs');
 const hdfs = require('./client');
@@ -21,3 +47,4 @@ remoteDataFile.on('error', err => {
 remoteDataFile.on('finish', () => {
     process.stdout('Finished');
 });
+*/
