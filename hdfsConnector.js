@@ -4,7 +4,7 @@ const fs = require('fs');
 
 const filename = 'PlayerPersonalDataM.csv';
 
-const target = 'http://localhost:50075/webhdfs/v1/test/maormaor?op=CREATE&user.name=root&namenoderpcaddress=99bd1f952b8a:9000&overwrite=false' + path.basename(filename);
+const target = 'http://localhost:50075/webhdfs/v1/test/maormaor?op=CREATE&user.name=root&namenoderpcaddress=99bd1f952b8a:50010&overwrite=false' + path.basename(filename);
 
 const rs = fs.createReadStream(path.join(__dirname, filename));
 const ws = request.post(target);
