@@ -130,9 +130,9 @@ const server = http.createServer((req, res) => {
 
 require('dns').lookup(require('os').hostname(), (err, add) => {
     if (err) {
-        console.log(err);
+        console.log(err)
     }
-    const promise = getDataWithFilter();
+    let promise = getDataWithFilter();
     address = add;
     process.stdout.write('Loading data ...');
     promise.then(() => {
