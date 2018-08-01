@@ -79,7 +79,7 @@ ipcMain.on('downloadHDFS', () => {
 });
 
 async function getData(nationality, age, overall) {
-  const training_data = await reader.readCsvFile(path.join(__dirname, FILE_NAME));
+  let training_data = await reader.readCsvFile(path.join(__dirname, FILE_NAME));
   _.each(training_data, value => {
       _.each(value, (v, k) => {
           if (isNumeric(v)) {
