@@ -1,7 +1,7 @@
 const WebHDFS = require('webhdfs');
 module.exports = WebHDFS.createClient({
-  user: 'root',
+  user: 'dr.who',
   host: 'http://localhost',
-  path: '/',
+  path: '/data/',
   port: 50070
 });
