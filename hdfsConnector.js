@@ -1,28 +1,22 @@
-const request = require('request');
-const path = require('path');
-const fs = require('fs');
+//= require('lodash');
+const http       = require('http');
 
-const filename = 'PlayerPersonalDataM.csv';
+const PORT = 50075;
 
-const target = 'http://localhost:50075/user/test?op=CREATE&user.name=root&namenoderpcaddress=99bd1f952b8a:50075&overwrite=false' + path.basename(filename);
+const options = {
+    hostname: 'localhost',
+    port: PORT,
+    path: '/webhdfs/v1/test/maormaor?op=CREATE&user.name=root&namenoderpcaddress=99bd1f952b8a:9000&overwrite=false',
+    method: 'POST'
+};
 
-const rs = fs.createReadStream(path.join(__dirname, filename));
-const ws = request.post(target);
+http.request(options);
 
-ws.on('drain', () => {
-    console.log('drain', new Date());
-    rs.resume();
-});
 
-rs.on('end', () => {
-    console.log('uploaded to ' + target);
-});
 
-ws.on('error', err => {
-    console.error('cannot send file to ' + target + ': ' + err);
-});
 
-rs.pipe(ws);
+
+
 /*
 const path = require('path');
 const fs = require('fs');
