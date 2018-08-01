@@ -6,7 +6,7 @@ const PORT = 50075;
 const options = {
     hostname: 'localhost',
     port: PORT,
-    path: '/webhdfs/v1/test/maormaor?op=CREATE&user.name=root&namenoderpcaddress=99bd1f952b8a:9000&overwrite=false',
+    path: '/user/test/maormaor?op=CREATE&user.name=root&namenoderpcaddress=99bd1f952b8a:9000&overwrite=false',
     method: 'POST'
 };
 
